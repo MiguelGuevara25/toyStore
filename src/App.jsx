@@ -16,7 +16,11 @@ function App() {
         setModalLogin={setModalLogin}
         successfulLogin={successfulLogin}
       />
-      <MenuMobile showMenu={showMenu} setShowMenu={setShowMenu} />
+      <MenuMobile
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        setModalLogin={setModalLogin}
+      />
       <Main />
       {modalLogin && (
         <ModalLogin

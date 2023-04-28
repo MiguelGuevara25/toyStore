@@ -6,7 +6,11 @@ import {
   RiCloseLine,
 } from "react-icons/all";
 
-const MenuMobile = ({ showMenu, setShowMenu }) => {
+const MenuMobile = ({ showMenu, setShowMenu, setModalLogin }) => {
+  const showModalLogin = () => {
+    setModalLogin(true);
+  };
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -15,7 +19,7 @@ const MenuMobile = ({ showMenu, setShowMenu }) => {
     <div>
       <nav className="bg-[#1f1d2B] py-2 px-8 rounded-tl-xl rounded-tr-xl lg:hidden fixed w-full bottom-0 left-0 text-3xl text-gray-400 flex items-center justify-between">
         <button className="p-2">
-          <RiUser3Line />
+          <RiUser3Line onClick={showModalLogin} />
         </button>
 
         <button className="p-2">
