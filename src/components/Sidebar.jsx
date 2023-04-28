@@ -6,12 +6,18 @@ import {
   RiNotification3Line,
   RiSettings4Line,
   RiLogoutBoxLine,
+  RiUser3Line,
+  RiDatabaseLine,
 } from "react-icons/all";
 
-const Sidebar = ({ showMenu }) => {
+const Sidebar = ({ showMenu, setModalLogin, successfulLogin }) => {
+  const showModalLogin = () => {
+    setModalLogin(true);
+  };
+
   return (
     <div
-      className={`bg-[#1f1d2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50 ${
+      className={`bg-[#1f1d2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl ${
         showMenu ? "left-0" : "-left-full"
       }`}
     >
@@ -73,7 +79,11 @@ const Sidebar = ({ showMenu }) => {
               href="#"
               className="flex justify-center p-4 rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors"
             >
-              <RiSettings4Line className="text-2xl" />
+              {successfulLogin ? (
+                <RiDatabaseLine className="text-2xl" />
+              ) : (
+                <RiSettings4Line className="text-2xl" />
+              )}
             </a>
           </li>
         </ul>
@@ -86,7 +96,11 @@ const Sidebar = ({ showMenu }) => {
               href="#"
               className="flex justify-center p-4 rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors"
             >
-              <RiLogoutBoxLine className="text-2xl" />
+              {successfulLogin ? (
+                <RiLogoutBoxLine className="text-2xl" />
+              ) : (
+                <RiUser3Line className="text-2xl" onClick={showModalLogin} />
+              )}
             </a>
           </li>
         </ul>

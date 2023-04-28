@@ -1,0 +1,20 @@
+{
+  "toys": [
+    {
+      "id": 1,
+      "name": "Carrito"
+    },
+    {
+      "id": 2,
+      "name": "Muñeco"
+    }
+  ],
+
+  "administration": [
+    {
+      "id": 1,
+      "user": "Codesor",
+      "password": "miguelynicole"
+    }
+  ]
+}
