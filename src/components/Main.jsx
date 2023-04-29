@@ -1,23 +1,13 @@
 import SearchFood from "./SearchFood";
+import ShoppingCart from "./ShoppingCart";
 
 const Main = () => {
-  // useEffect(() => {
-  //   async function obtenerToys() {
-  //     const url = "http://localhost:3000/toys";
-  //     const response = await fetch(url);
-  //     const data = await response.json();
-  //     setNose(data);
-  //   }
-
-  //   obtenerToys();
-  // }, []);
-
   return (
     <div>
-      <main className="lg:pl-28 grid grid-cols-1 lg:grid-cols-8">
+      <main className="lg:pl-28 grid grid-cols-1 ml-8 lg:grid-cols-8">
         <div className="lg:col-span-6">
           {/* Header */}
-          <header className="p-4">
+          <header className="py-4 pr-8">
             {/* Title and Search */}
             <SearchFood />
 
@@ -50,7 +40,8 @@ const Main = () => {
             <h1>My Data</h1>
           </div>
         </div>
-        <div className="lg:col-span-2 fixed lg:static right-0">Carrito</div>
+
+        <ShoppingCart />
       </main>
     </div>
   );
