@@ -10,11 +10,16 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
 
   useEffect(() => {
     async function obtenerAdmin() {
-      const url = "http://localhost:3000/administration";
-      const response = await fetch(url);
-      const data = await response.json();
-      setUser(data[0].user);
-      setContra(data[0].password);
+      const administration = [
+        {
+          id: 1,
+          user: "Codesor",
+          password: "miguelynicole",
+        },
+      ];
+
+      setUser(administration[0].user);
+      setContra(administration[0].password);
     }
 
     obtenerAdmin();

@@ -1,19 +1,16 @@
-import { useState, useEffect } from "react";
 import SearchFood from "./SearchFood";
 
 const Main = () => {
-  const [nose, setNose] = useState([]);
+  // useEffect(() => {
+  //   async function obtenerToys() {
+  //     const url = "http://localhost:3000/toys";
+  //     const response = await fetch(url);
+  //     const data = await response.json();
+  //     setNose(data);
+  //   }
 
-  useEffect(() => {
-    async function obtenerToys() {
-      const url = "http://localhost:3000/toys";
-      const response = await fetch(url);
-      const data = await response.json();
-      setNose(data);
-    }
-
-    obtenerToys();
-  }, []);
+  //   obtenerToys();
+  // }, []);
 
   return (
     <div>
@@ -50,12 +47,7 @@ const Main = () => {
           </header>
 
           <div className="text-white">
-            <h1>My Data ctmr</h1>
-            {nose.map((toys) => (
-              <div key={toys.id} className="bg-green-300">
-                <h1>{toys.name}</h1>
-              </div>
-            ))}
+            <h1>My Data</h1>
           </div>
         </div>
         <div className="lg:col-span-2 fixed lg:static right-0">Carrito</div>
