@@ -20,6 +20,7 @@ function App() {
         showMenu={showMenu}
         setShowMenu={setShowMenu}
         setModalLogin={setModalLogin}
+        successfulLogin={successfulLogin}
       />
       <Main />
       {modalLogin && (

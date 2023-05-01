@@ -40,7 +40,7 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80">
-      <div className="relative z-50 w-1/3 rounded-xl bg-[#1f1d2B] flex py-10 items-center justify-center">
+      <div className="relative z-50 w-3/4 md:w-1/3 rounded-xl bg-[#1f1d2B] flex py-10 items-center justify-center">
         <RiCloseFill
           onClick={closeModalLogin}
           className="cursor-pointer right-3 top-3 text-gray-300 text-2xl absolute"
