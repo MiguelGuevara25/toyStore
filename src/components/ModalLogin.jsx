@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
-import { RiCloseFill } from "react-icons/ri";
+import { RiCloseFill, RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
 
 const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
   const [user, setUser] = useState("");
   const [contra, setContra] = useState("");
   const [verifUser, setVerifUser] = useState("");
   const [verifPassword, setVerifPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     async function obtenerAdmin() {
@@ -38,6 +39,11 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
     }
   };
 
+  const togglePassword = (e) => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80">
       <div className="relative z-50 w-3/4 md:w-1/3 rounded-xl bg-[#1f1d2B] flex py-10 items-center justify-center">
@@ -51,7 +57,7 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
             Iniciar Sesión
           </h1>
 
-          <div className="my-5 flex flex-col gap-3">
+          <div className="my-5 flex flex-col gap-3 relative">
             <input
               type="text"
               name="user"
@@ -62,13 +68,19 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
             />
 
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Contraseña"
               className="bg-[#1f1d2B] border-b-4 border-[#ec7c6a] text-gray-300"
               value={verifPassword}
               onChange={(e) => setVerifPassword(e.target.value)}
             />
+            <button
+              className="text-gray-300 text-xl font-bold absolute right-1 bottom-[5px]"
+              onClick={togglePassword}
+            >
+              {showPassword ? <RiEyeCloseLine /> : <RiEyeLine />}
+            </button>
           </div>
 
           <button

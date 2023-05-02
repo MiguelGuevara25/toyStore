@@ -4,7 +4,7 @@ import {
   RiMenu3Fill,
   RiUser3Line,
   RiCloseLine,
-  RiLogoutBoxLine
+  RiLogoutBoxLine,
 } from "react-icons/all";
 
 const MenuMobile = ({
