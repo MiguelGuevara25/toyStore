@@ -1,12 +1,32 @@
+import { useState, useEffect } from "react";
 import { RiSearch2Line } from "react-icons/all";
 
 const SearchFood = () => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+  }, []);
+
+  const options = {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "numeric",
+    second: "numeric",
+  };
+
+  const fecha = time.toLocaleString("es-ES", options);
+
   return (
     <div>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
         <div>
-          <h1 className="text-2xl text-gray-300">Jeager Resto</h1>
-          <p className="text-gray-500">25 Febrero 2017</p>
+          <h1 className="text-2xl text-gray-300">Toy Store</h1>
+          <p className="text-gray-500">{fecha}</p>
         </div>
 
         <form>

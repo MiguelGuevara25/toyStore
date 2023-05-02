@@ -1,3 +1,4 @@
+import Products from "./Products";
 import SearchFood from "./SearchFood";
 import ShoppingCart from "./ShoppingCart";
 
@@ -13,10 +14,7 @@ const Main = () => {
 
             {/* Tabs */}
             <nav className="text-gray-300 flex items-center justify-between md:justify-start md:gap-8 border-b mb-6">
-              <a
-                href="#"
-                className="relative py-2 pr-4 before:w-1/2 before:h-[2px] before:absolute before:bg-[#ec7c6a] before:left-0 before:rounded-full before:-bottom-[1px] text-[#ec7c6a]"
-              >
+              <a href="#" className="relative py-2 pr-4 text-[#ec7c6a]">
                 Hot Dishes
               </a>
               <a href="#" className="py-2 pr-4">
@@ -36,9 +34,7 @@ const Main = () => {
             </div>
           </header>
 
-          <div className="text-white">
-            <h1>My Data</h1>
-          </div>
+          <Products />
         </div>
 
         <ShoppingCart />
