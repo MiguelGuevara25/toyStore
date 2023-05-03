@@ -76,7 +76,7 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
               onChange={(e) => setVerifPassword(e.target.value)}
             />
             <button
-              className="text-gray-300 text-xl font-bold absolute right-1 bottom-[5px]"
+              className="text-gray-300 text-xl font-bold absolute right-1 bottom-2"
               onClick={togglePassword}
             >
               {showPassword ? <RiEyeCloseLine /> : <RiEyeLine />}

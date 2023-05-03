@@ -1,10 +1,11 @@
+import { useState } from "react";
 import {
   RiAddLine,
-  RiPieChartLine,
   RiMenu3Fill,
   RiUser3Line,
   RiCloseLine,
   RiLogoutBoxLine,
+  RiShoppingCartLine,
 } from "react-icons/all";
 
 const MenuMobile = ({
@@ -13,8 +14,14 @@ const MenuMobile = ({
   setModalLogin,
   successfulLogin,
 }) => {
+  const [cartShopping, setCartShopping] = useState(false);
+
   const showModalLogin = () => {
     setModalLogin(true);
+  };
+
+  const showCartShopping = () => {
+    setCartShopping(!cartShopping);
   };
 
   const toggleMenu = () => {
@@ -28,7 +35,11 @@ const MenuMobile = ({
           {successfulLogin ? (
             <RiLogoutBoxLine className="text-2xl" />
           ) : (
-            <RiUser3Line className="text-2xl" onClick={showModalLogin} />
+            <RiUser3Line
+              className="text-2xl"
+              onClick={showModalLogin}
+              cartShopping={cartShopping}
+            />
           )}
         </button>
 
@@ -36,11 +47,15 @@ const MenuMobile = ({
           <RiAddLine />
         </button>
 
-        {successfulLogin && (
-          <button className="p-2">
-            <RiPieChartLine />
+        {/* {successfulLogin && (
+          <button className="p-2" onClick={showCartShopping}>
+            <RiShoppingCartLine />
           </button>
-        )}
+        )} */}
+
+        <button className="p-2" onClick={showCartShopping}>
+          <RiShoppingCartLine />
+        </button>
 
         <button className="text-white p-2" onClick={toggleMenu}>
           {showMenu ? <RiCloseLine /> : <RiMenu3Fill />}

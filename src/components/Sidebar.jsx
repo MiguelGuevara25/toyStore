@@ -1,10 +1,7 @@
 import {
   RiHome6Line,
-  RiPercentLine,
   RiPieChartLine,
-  RiMailLine,
   RiNotification3Line,
-  RiSettings4Line,
   RiLogoutBoxLine,
   RiUser3Line,
   RiDatabaseLine,
@@ -56,14 +53,17 @@ const Sidebar = ({ showMenu, setModalLogin, successfulLogin }) => {
             </a>
           </li>
 
-          <li className="hover:bg-[#262837] p-4 rounded-tl-xl rounded-bl-xl group transition-colors">
-            <a
-              href="#"
-              className="flex justify-center p-4 rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors"
-            >
-              {successfulLogin && <RiDatabaseLine className="text-2xl" />}
-            </a>
-          </li>
+          {successfulLogin && (
+            <li className="hover:bg-[#262837] p-4 rounded-tl-xl rounded-bl-xl group transition-colors">
+              <a
+                href="#"
+                className="flex justify-center p-4 rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors"
+              >
+                {" "}
+                <RiDatabaseLine className="text-2xl" />
+              </a>
+            </li>
+          )}
         </ul>
       </div>
 
@@ -74,11 +74,13 @@ const Sidebar = ({ showMenu, setModalLogin, successfulLogin }) => {
               href="#"
               className="flex justify-center p-4 rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors"
             >
-              {successfulLogin ? (
-                <RiLogoutBoxLine className="text-2xl" />
-              ) : (
-                <RiUser3Line className="text-2xl" onClick={showModalLogin} />
-              )}
+              <button className="text-2xl">
+                {successfulLogin ? (
+                  <RiLogoutBoxLine />
+                ) : (
+                  <RiUser3Line onClick={showModalLogin} />
+                )}
+              </button>
             </a>
           </li>
         </ul>
