@@ -1,4 +1,4 @@
-const ShoppingCart = ({ cart, cartShopping }) => {
+const ShoppingCart = ({ cart, cartShopping, countToys }) => {
   return (
     <div
       className={`bg-[#1f1d2B] text-gray-300 fixed lg:right-0 top-0 w-[23%] h-screen flex flex-col items-center py-6 rounded-tr-xl rounded-br-xl z-50 ${
@@ -15,10 +15,12 @@ const ShoppingCart = ({ cart, cartShopping }) => {
       <ul>
         {cart.map((toy) => (
           <li key={toy.id}>
-            {toy.name} - ${toy.price}
+            {toy.name} - ${toy.price} la cantidad es {toy.cantidad}
           </li>
         ))}
       </ul>
+
+      <div>{cart.length ? <p>Total de productos {countToys}</p> : " "}</div>
     </div>
   );
 };

@@ -10,10 +10,11 @@ const Products = ({ addProduct }) => {
 
   return (
     <div className="text-white">
-      <h1>Nuestros Productos</h1>
-      <div className="flex gap-5">
+      <h1 className="text-3xl uppercase mb-3">Nuestros Productos</h1>
+      <div className="grid grid-cols-4 gap-5">
         {juguetes.map((toy) => (
-          <div key={toy.id}>
+          <div key={toy.id} className="flex flex-col items-center">
+            <img src={`${toy.img}`} alt="Products" className="w-40 h-40" />
             <p>{toy.name}</p>
             <p>{toy.price}</p>
             <button

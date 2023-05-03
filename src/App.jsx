@@ -11,7 +11,7 @@ function App() {
   const [cartShopping, setCartShopping] = useState(false);
 
   return (
-    <div className="bg-[#262837] w-full h-screen">
+    <div className="bg-[#262837] w-full">
       <Sidebar
         showMenu={showMenu}
         setModalLogin={setModalLogin}
