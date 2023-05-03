@@ -8,6 +8,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
   const [successfulLogin, setSuccessfulLogin] = useState(false);
+  const [cartShopping, setCartShopping] = useState(false);
 
   return (
     <div className="bg-[#262837] w-full h-screen">
@@ -21,8 +22,10 @@ function App() {
         setShowMenu={setShowMenu}
         setModalLogin={setModalLogin}
         successfulLogin={successfulLogin}
+        cartShopping={cartShopping}
+        setCartShopping={setCartShopping}
       />
-      <Main />
+      <Main cartShopping={cartShopping} />
       {modalLogin && (
         <ModalLogin
           setModalLogin={setModalLogin}

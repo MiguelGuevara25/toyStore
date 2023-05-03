@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   RiAddLine,
   RiMenu3Fill,
@@ -13,9 +12,9 @@ const MenuMobile = ({
   setShowMenu,
   setModalLogin,
   successfulLogin,
+  cartShopping,
+  setCartShopping,
 }) => {
-  const [cartShopping, setCartShopping] = useState(false);
-
   const showModalLogin = () => {
     setModalLogin(true);
   };
@@ -35,11 +34,7 @@ const MenuMobile = ({
           {successfulLogin ? (
             <RiLogoutBoxLine className="text-2xl" />
           ) : (
-            <RiUser3Line
-              className="text-2xl"
-              onClick={showModalLogin}
-              cartShopping={cartShopping}
-            />
+            <RiUser3Line className="text-2xl" onClick={showModalLogin} />
           )}
         </button>
 
@@ -47,15 +42,11 @@ const MenuMobile = ({
           <RiAddLine />
         </button>
 
-        {/* {successfulLogin && (
+        {successfulLogin && (
           <button className="p-2" onClick={showCartShopping}>
             <RiShoppingCartLine />
           </button>
-        )} */}
-
-        <button className="p-2" onClick={showCartShopping}>
-          <RiShoppingCartLine />
-        </button>
+        )}
 
         <button className="text-white p-2" onClick={toggleMenu}>
           {showMenu ? <RiCloseLine /> : <RiMenu3Fill />}

@@ -4,9 +4,8 @@ import Products from "./Products";
 import SearchFood from "./SearchFood";
 import ShoppingCart from "./ShoppingCart";
 
-const Main = () => {
+const Main = ({ cartShopping }) => {
   const [cart, setCart] = useState([]);
-
   const addProduct = (toy) => {
     setCart([...cart, toy]);
   };
@@ -41,7 +40,7 @@ const Main = () => {
           <Products addProduct={addProduct} />
         </div>
 
-        <ShoppingCart cart={cart} />
+        <ShoppingCart cart={cart} cartShopping={cartShopping} />
       </main>
     </div>
   );
