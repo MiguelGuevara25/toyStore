@@ -1,25 +1,10 @@
-import { useState } from "react";
-
 import Products from "./Products";
 import SearchFood from "./SearchFood";
 import ShoppingCart from "./ShoppingCart";
+import useStoreToys from "../hooks/useStoreToys";
 
-const Main = ({ cartShopping }) => {
-  const [cart, setCart] = useState([]);
-  const [countToys, setCountToys] = useState(0);
-
-  const addProduct = (toy) => {
-    setCountToys(countToys + 1);
-    
-    const index = cart.findIndex((item) => item.id === toy.id);
-    if (index !== -1) {
-      const updatedCartItems = [...cart];
-      updatedCartItems[index].cantidad++;
-      setCart(updatedCartItems);
-    } else {
-      setCart([...cart, { ...toy }]);
-    }
-  };
+const Main = () => {
+  const { addProduct, cart, countToys, cartShopping } = useStoreToys();
 
   return (
     <div>

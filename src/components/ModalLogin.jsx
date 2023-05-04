@@ -1,13 +1,22 @@
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
 import { RiCloseFill, RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
+import useStoreToys from "../hooks/useStoreToys";
 
-const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
-  const [user, setUser] = useState("");
-  const [contra, setContra] = useState("");
-  const [verifUser, setVerifUser] = useState("");
-  const [verifPassword, setVerifPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+const ModalLogin = () => {
+  const {
+    user,
+    contra,
+    verifUser,
+    verifPassword,
+    showPassword,
+    setUser,
+    setContra,
+    setVerifUser,
+    setVerifPassword,
+    closeModalLogin,
+    togglePassword,
+    singin,
+  } = useStoreToys();
 
   useEffect(() => {
     async function obtenerAdmin() {
@@ -25,24 +34,6 @@ const ModalLogin = ({ setModalLogin, setSuccessfulLogin }) => {
 
     obtenerAdmin();
   }, []);
-
-  const closeModalLogin = () => {
-    setModalLogin(false);
-  };
-
-  const singin = (e) => {
-    e.preventDefault();
-
-    if (verifUser === user && verifPassword === contra) {
-      setSuccessfulLogin(true);
-      setModalLogin(false);
-    }
-  };
-
-  const togglePassword = (e) => {
-    e.preventDefault();
-    setShowPassword(!showPassword);
-  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80">

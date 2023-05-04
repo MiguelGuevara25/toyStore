@@ -1,4 +1,8 @@
-const ShoppingCart = ({ cart, cartShopping, countToys }) => {
+import useStoreToys from "../hooks/useStoreToys";
+
+const ShoppingCart = () => {
+  const { cart, cartShopping, countToys } = useStoreToys();
+
   return (
     <div
       className={`bg-[#1f1d2B] text-gray-300 fixed lg:right-0 top-0 w-[23%] h-screen flex flex-col items-center py-6 rounded-tr-xl rounded-br-xl z-50 ${

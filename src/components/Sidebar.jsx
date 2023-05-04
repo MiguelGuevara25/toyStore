@@ -7,10 +7,10 @@ import {
   RiDatabaseLine,
 } from "react-icons/all";
 
-const Sidebar = ({ showMenu, setModalLogin, successfulLogin }) => {
-  const showModalLogin = () => {
-    setModalLogin(true);
-  };
+import useStoreToys from "../hooks/useStoreToys";
+
+const Sidebar = () => {
+  const { showMenu, successfulLogin, showModalLogin } = useStoreToys();
 
   return (
     <div

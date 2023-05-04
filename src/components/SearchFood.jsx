@@ -1,23 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useStoreToys from "../hooks/useStoreToys";
 import { RiSearch2Line } from "react-icons/all";
 
 const SearchFood = () => {
-  const [time, setTime] = useState(new Date());
+  const { time, setTime, options } = useStoreToys();
 
   useEffect(() => {
     setInterval(() => {
       setTime(new Date());
     }, 1000);
   }, []);
-
-  const options = {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "numeric",
-    second: "numeric",
-  };
 
   const fecha = time.toLocaleString("es-ES", options);
 

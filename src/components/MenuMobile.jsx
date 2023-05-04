@@ -6,26 +6,16 @@ import {
   RiLogoutBoxLine,
   RiShoppingCartLine,
 } from "react-icons/all";
+import useStoreToys from "../hooks/useStoreToys";
 
-const MenuMobile = ({
-  showMenu,
-  setShowMenu,
-  setModalLogin,
-  successfulLogin,
-  cartShopping,
-  setCartShopping,
-}) => {
-  const showModalLogin = () => {
-    setModalLogin(true);
-  };
-
-  const showCartShopping = () => {
-    setCartShopping(!cartShopping);
-  };
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+const MenuMobile = () => {
+  const {
+    showMenu,
+    successfulLogin,
+    showModalLogin,
+    showCartShopping,
+    toggleMenu,
+  } = useStoreToys();
 
   return (
     <div>

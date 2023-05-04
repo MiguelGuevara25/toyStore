@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useStoreToys from "../hooks/useStoreToys";
 import toys from "../data";
 
-const Products = ({ addProduct }) => {
-  const [juguetes, setJuguetes] = useState([]);
+const Products = () => {
+  const { juguetes, setJuguetes, addProduct } = useStoreToys();
 
   useEffect(() => {
     setJuguetes(toys);
